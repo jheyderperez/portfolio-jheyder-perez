@@ -1,0 +1,70 @@
+# Publica el portafolio cada vez que se guarda un cambio en `main`.
+#
+# El sitio se sirve desde la rama `gh-pages`, que es 100% generada: se borra y
+# se reescribe en cada publicación. NUNCA guardes nada solo en `gh-pages` —
+# se pierde. Todo lo que deba estar en el sitio va en `main` (dentro de
+# `public/` si es un archivo suelto como una imagen o un PDF).
+#
+# `CNAME` y `.nojekyll` viven en `public/` para que el build los produzca solo.
+# Sin CNAME el dominio propio deja de funcionar; sin .nojekyll GitHub ignora
+# la carpeta `_astro/` y el sitio se queda sin estilos. El paso de verificación
+# corta la publicación si alguno falta, en vez de tumbar el sitio.
+
+name: Publicar sitio
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publicar-sitio
+  cancel-in-progress: true
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - run: npm ci
+
+      - run: npm run build
+
+      - name: Verificar que el sitio no salga roto
+        run: |
+          test -s dist/CNAME || {
+            echo "::error::Falta dist/CNAME. Debe existir public/CNAME con el dominio del sitio."
+            exit 1
+          }
+          test -f dist/.nojekyll || {
+            echo "::error::Falta dist/.nojekyll. Debe existir public/.nojekyll (archivo vacío)."
+            exit 1
+          }
+          test -s dist/index.html || {
+            echo "::error::dist/index.html está vacío o no existe."
+            exit 1
+          }
+          echo "Dominio: $(cat dist/CNAME)"
+
+      - name: Publicar en gh-pages
+        run: |
+          cd dist
+          git init -q
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -qm "Publicar ${GITHUB_SHA::7}"
+          git push -qf \
+            "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" \
+            HEAD:gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
