@@ -1,0 +1,34 @@
+---
+import { siteConfig, type Lang } from "../config";
+import { t, ui } from "../i18n";
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const isPlaceholder = (x: string) => x.includes("<<PLACEHOLDER");
+---
+
+<h1 class="serif text-3xl sm:text-4xl" style="color: var(--ink)">{lang === "es" ? "Docencia" : "Teaching"}</h1>
+<p class="mt-3 text-[17px] leading-relaxed" style="color: var(--muted)">{t(ui.teachingIntro, lang)}</p>
+
+{siteConfig.teaching.map((g) => {
+  const inst = t(g.institution, lang);
+  return (
+    <section class="mt-12">
+      <h2 class:list={["section-title", isPlaceholder(inst) && "!text-amber-700"]}>{inst}</h2>
+      <p class="-mt-2 mb-4 text-[15px] font-semibold" style="color: var(--accent)">{t(g.role, lang)}</p>
+      <ul class="space-y-4">
+        {g.courses.map((c) => (
+          <li class="sm:grid sm:grid-cols-[1fr_auto] sm:gap-6 sm:items-baseline">
+            <div>
+              <p class="font-semibold text-[17px] leading-snug" style="color: var(--ink)">{t(c.name, lang)}</p>
+              {c.note && <p class="text-[15px]" style="color: var(--muted)">{lang === "es" ? "Con " : "With "}{c.note}</p>}
+            </div>
+            <div class="mt-1.5 sm:mt-0 flex flex-wrap gap-1.5 sm:justify-end">
+              {c.terms.split(",").map((term) => <span class="chip tabular-nums">{term.trim()}</span>)}
+            </div>
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+})}

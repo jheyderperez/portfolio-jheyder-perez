@@ -1,0 +1,124 @@
+---
+import { siteConfig, type Lang } from "../config";
+import { t, ui } from "../i18n";
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+---
+
+<div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+  <div>
+    <h1 class="serif text-3xl sm:text-4xl" style="color: var(--ink)">CV</h1>
+    <p class="mt-3 text-[17px]" style="color: var(--muted)">{t(ui.cvIntro, lang)}</p>
+  </div>
+  {siteConfig.cvPdf && (
+    <a
+      href={siteConfig.cvPdf}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-flex items-center justify-center px-4 py-2 rounded text-white font-semibold text-sm self-start sm:self-auto"
+      style="background: var(--accent)"
+    >{t(ui.downloadCv, lang)}</a>
+  )}
+</div>
+
+<!-- Fila: fecha a la izquierda, contenido a la derecha -->
+<section class="mt-10">
+  <h2 class="section-title">{t(ui.education, lang)}</h2>
+  <ul class="space-y-5">
+    {siteConfig.education.map((e) => (
+      <li class="sm:grid sm:grid-cols-[130px_1fr] sm:gap-4">
+        <p class="text-sm tabular-nums pt-0.5" style="color: var(--muted)">{e.dateRange}</p>
+        <div>
+          <p class="font-semibold text-[17px] leading-snug">{t(e.degree, lang)}</p>
+          <p class="text-[15px]" style="color: var(--accent)">{e.school}</p>
+          {e.achievements.length > 0 && (
+            <p class="mt-1 text-[15px]" style="color: var(--muted)">{e.achievements.map((a) => t(a, lang)).join(" · ")}</p>
+          )}
+        </div>
+      </li>
+    ))}
+  </ul>
+</section>
+
+<section class="mt-12">
+  <h2 class="section-title">{t(ui.experience, lang)}</h2>
+  <ul class="space-y-6">
+    {siteConfig.experience.map((x) => (
+      <li class="sm:grid sm:grid-cols-[130px_1fr] sm:gap-4">
+        <p class="text-sm tabular-nums pt-0.5" style="color: var(--muted)">{t(x.dateRange, lang)}</p>
+        <div>
+          <p class="font-semibold text-[17px] leading-snug">{t(x.title, lang)}</p>
+          <p class="text-[15px]" style="color: var(--accent)">{x.company}</p>
+          <ul class="mt-1.5 space-y-1 list-disc pl-5 text-[15px] leading-relaxed marker:text-[var(--highlight)]" style="color: var(--muted)">
+            {x.bullets.map((b) => <li>{t(b, lang)}</li>)}
+          </ul>
+        </div>
+      </li>
+    ))}
+  </ul>
+</section>
+
+<section class="mt-12">
+  <h2 class="section-title">{t(ui.scholarships, lang)}</h2>
+  <ul class="space-y-5">
+    {siteConfig.scholarships.map((x) => (
+      <li class="sm:grid sm:grid-cols-[130px_1fr] sm:gap-4">
+        <p class="text-sm tabular-nums pt-0.5" style="color: var(--muted)">{t(x.year, lang)}</p>
+        <div>
+          <p class="font-semibold text-[17px] leading-snug">{t(x.name, lang)}</p>
+          <p class="text-[15px]" style="color: var(--accent)">{t(x.issuer, lang)}</p>
+          <p class="mt-1 text-[15px] leading-relaxed" style="color: var(--muted)">{t(x.description, lang)}</p>
+        </div>
+      </li>
+    ))}
+  </ul>
+</section>
+
+<section class="mt-12">
+  <h2 class="section-title">{t(ui.awards, lang)}</h2>
+  <ul class="space-y-5">
+    {siteConfig.awards.map((x) => (
+      <li class="sm:grid sm:grid-cols-[130px_1fr] sm:gap-4">
+        <p class="text-sm tabular-nums pt-0.5" style="color: var(--muted)">{x.year}</p>
+        <div>
+          <p class="font-semibold text-[17px] leading-snug">{t(x.name, lang)}</p>
+          {t(x.issuer, lang) && <p class="text-[15px]" style="color: var(--accent)">{t(x.issuer, lang)}</p>}
+          {t(x.description, lang) && <p class="mt-1 text-[15px] leading-relaxed" style="color: var(--muted)">{t(x.description, lang)}</p>}
+        </div>
+      </li>
+    ))}
+  </ul>
+</section>
+
+<section class="mt-12">
+  <h2 class="section-title">{t(ui.specializations, lang)}</h2>
+  <ul class="space-y-5">
+    {siteConfig.specializations.map((x) => (
+      <li class="sm:grid sm:grid-cols-[130px_1fr] sm:gap-4">
+        <p class="text-sm tabular-nums pt-0.5" style="color: var(--muted)">{t(x.year, lang)}</p>
+        <div>
+          <p class="font-semibold text-[17px] leading-snug">{t(x.name, lang)}</p>
+          <p class="text-[15px]" style="color: var(--muted)">{t(x.detail, lang)}</p>
+        </div>
+      </li>
+    ))}
+  </ul>
+</section>
+
+<section class="mt-12 grid gap-10 sm:grid-cols-2">
+  <div>
+    <h2 class="section-title">{t(ui.skills, lang)}</h2>
+    <div class="flex flex-wrap gap-1.5">
+      {siteConfig.skills.map((sk) => <span class="chip">{t(sk, lang)}</span>)}
+    </div>
+  </div>
+  <div>
+    <h2 class="section-title">{t(ui.languages, lang)}</h2>
+    <ul class="space-y-2">
+      {siteConfig.languages.map((l) => (
+        <li class="text-[16px]"><span class="font-semibold">{t(l.name, lang)}</span> <span style="color: var(--muted)">— {t(l.level, lang)}</span></li>
+      ))}
+    </ul>
+  </div>
+</section>

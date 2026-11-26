@@ -1,0 +1,153 @@
+---
+import { siteConfig, type Lang } from "../config";
+import { t, tabs, tabPath, ui, otherLang, type TabKey } from "../i18n";
+import "../styles/global.css";
+
+interface Props {
+  lang: Lang;
+  tab: TabKey;
+}
+
+const { lang, tab } = Astro.props;
+const other = otherLang(lang);
+const current = tabs.find((x) => x.key === tab)!;
+const pageTitle =
+  tab === "about"
+    ? `${siteConfig.name} — ${t(siteConfig.title, lang)}`
+    : `${current.label[lang]} — ${siteConfig.name}`;
+const description = t(siteConfig.description, lang);
+const url = siteConfig.url + tabPath(tab, lang);
+const altUrl = siteConfig.url + tabPath(tab, other);
+const s = siteConfig.social;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: siteConfig.name,
+  jobTitle: t(siteConfig.title, lang),
+  url: siteConfig.url,
+  image: `${siteConfig.url}/og.jpg`,
+  email: s.email,
+  sameAs: [s.scholar, s.researchgate, s.linkedin, s.github].filter(Boolean),
+  alumniOf: [
+    { "@type": "CollegeOrUniversity", name: "Pontificia Universidad Católica del Perú" },
+    { "@type": "CollegeOrUniversity", name: "Universidad San Ignacio de Loyola" },
+  ],
+  worksFor: { "@type": "Organization", name: "Toward Resilience Corporation S.A.C." },
+  address: { "@type": "PostalAddress", addressLocality: "Lima", addressCountry: "PE" },
+};
+---
+
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <meta
+      name="keywords"
+      content={lang === "es"
+        ? "Jheyder Perez, Ingeniero Civil, Evaluación Estructural, Gestión de Riesgos, Evacuación por Tsunami, Investigador, PUCP, Lima, Perú"
+        : "Jheyder Perez, Civil Engineer, Structural Assessment, Disaster Risk Management, Tsunami Evacuation, Researcher, PUCP, Lima, Peru"}
+    />
+    <link rel="canonical" href={url} />
+    <link rel="alternate" hreflang={lang} href={url} />
+    <link rel="alternate" hreflang={other} href={altUrl} />
+    <link rel="alternate" hreflang="x-default" href={siteConfig.url + tabPath(tab, "es")} />
+    <meta property="og:type" content="profile" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={`${siteConfig.url}/og.jpg`} />
+    <meta property="og:url" content={url} />
+    <meta property="og:locale" content={lang === "es" ? "es_PE" : "en_US"} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content={`${siteConfig.url}/og.jpg`} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    <style set:html={`:root{--accent:${siteConfig.accentColor};--highlight:${siteConfig.highlightColor};}`}></style>
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b" style="border-color: var(--line)">
+      <div class="max-w-[880px] mx-auto px-4 sm:px-6">
+        <div class="flex items-center justify-between gap-4 h-14">
+          <a href={tabPath("about", lang)} class="text-lg sm:text-xl tracking-tight shrink-0" style="color: var(--ink)">
+            <span class="font-bold">{siteConfig.shortName.first}</span>
+            <span class="font-light">{siteConfig.shortName.last}</span>
+          </a>
+
+          <div class="flex items-center gap-6">
+            <nav aria-label={lang === "es" ? "Secciones" : "Sections"} class="hidden md:block">
+              <ul class="flex items-center gap-6 text-[15px]">
+                {tabs.map((x) => (
+                  <li>
+                    <a href={x.path[lang]} class="tab py-4" aria-current={x.key === tab ? "page" : undefined}>
+                      {x.label[lang]}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+
+            <div class="flex items-center text-sm font-semibold rounded border overflow-hidden shrink-0" style="border-color: var(--line)" role="group" aria-label="Idioma / Language">
+              <a
+                href={tabPath(tab, "es")}
+                hreflang="es"
+                lang="es"
+                class:list={["px-2.5 py-1", lang === "es" ? "text-white" : "hover:bg-gray-50"]}
+                style={lang === "es" ? "background: var(--accent)" : "color: var(--muted)"}
+                aria-current={lang === "es" ? "true" : undefined}
+                title="Español"
+              >ES</a>
+              <a
+                href={tabPath(tab, "en")}
+                hreflang="en"
+                lang="en"
+                class:list={["px-2.5 py-1", lang === "en" ? "text-white" : "hover:bg-gray-50"]}
+                style={lang === "en" ? "background: var(--accent)" : "color: var(--muted)"}
+                aria-current={lang === "en" ? "true" : undefined}
+                title="English"
+              >EN</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pestañas en móvil: fila deslizable, siempre visibles -->
+        <nav aria-label={lang === "es" ? "Secciones" : "Sections"} class="md:hidden -mx-4 px-4 overflow-x-auto tabs-scroll">
+          <ul class="flex items-center justify-between gap-3 text-[14px] h-10 min-w-max sm:min-w-0 sm:justify-start sm:gap-6 sm:text-[15px]">
+            {tabs.map((x) => (
+              <li>
+                <a href={x.path[lang]} class="tab py-2.5" aria-current={x.key === tab ? "page" : undefined}>
+                  {x.label[lang]}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="flex-1 w-full max-w-[880px] mx-auto px-4 sm:px-6 py-10 sm:py-14">
+      <slot />
+    </main>
+
+    <footer class="border-t" style="border-color: var(--line)">
+      <div class="max-w-[880px] mx-auto px-4 sm:px-6 py-6 flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between text-sm" style="color: var(--muted)">
+        <p>&copy; {new Date().getFullYear()} {siteConfig.name}. {t(ui.rights, lang)}</p>
+        <p class="flex flex-wrap gap-x-4 gap-y-1">
+          {s.email && <a class="hover:underline" href={`mailto:${s.email}`}>Email</a>}
+          {s.scholar && <a class="hover:underline" href={s.scholar} target="_blank" rel="noopener noreferrer">Google Scholar</a>}
+          {s.researchgate && <a class="hover:underline" href={s.researchgate} target="_blank" rel="noopener noreferrer">ResearchGate</a>}
+          {s.linkedin && <a class="hover:underline" href={s.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>}
+          {s.github && <a class="hover:underline" href={s.github} target="_blank" rel="noopener noreferrer">GitHub</a>}
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
