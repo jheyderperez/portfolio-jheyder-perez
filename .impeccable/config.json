@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "flat-type-hierarchy",
+        "value": "*",
+        "files": [
+          "src/layouts/Base.astro"
+        ],
+        "createdAt": "2026-11-26T19:12:39.374Z",
+        "reason": "agente portafolios: L80 es la barra de navegación (nombre 18-20px junto a pestañas 15px, como el modelo ajpoulos.github.io que pidió el cliente); la jerarquía de página (h1 ~44px, títulos serif) se revisó en las capturas QA 1280/375"
+      }
+    ]
+  }
+}
