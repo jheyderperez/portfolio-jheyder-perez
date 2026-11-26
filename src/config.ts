@@ -1,5 +1,5 @@
 export const siteConfig = {
-  name: "Jheyder W. Perez Aguinaga",
+  name: "Jheyder Perez",
   title: "Ingeniero Civil & Investigador",
   description:
     "Ingeniero Civil especializado en Evaluación Estructural y Gestión de Riesgos de Desastres. CEO de Toward Resilience Corp. Investigador visitante en Tohoku University. Docente en PUCP.",
