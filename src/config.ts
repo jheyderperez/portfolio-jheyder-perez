@@ -107,7 +107,7 @@ export const siteConfig = {
       },
     },
     {
-      title: { es: "Gestión de Riesgos de Desastres Naturales", en: "Natural Disaster Risk Management" },
+      title: { es: "Gestión de Riesgos de Desastres", en: "Disaster Risk Management" },
       description: {
         es: "Resiliencia comunitaria, preparación frente a sismos, tsunamis, flujos de escombros e inundaciones, con enfoque en Lima Metropolitana.",
         en: "Community resilience and preparedness for earthquakes, tsunamis, debris flows and floods, with a focus on Metropolitan Lima.",
