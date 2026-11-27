@@ -228,7 +228,7 @@ export const siteConfig = {
     {
       name: { es: "Modelo Global de Evacuación por Tsunami (GTEM)", en: "Global Tsunami Evacuation Model (GTEM)" },
       role: { es: "Asistente de investigación", en: "Research Assistant" },
-      dateRange: { es: "2025 – Presente", en: "2025 – Present" },
+      dateRange: "2025 – 2026",
       description: {
         es: "Sistemas complejos y modelos basados en agentes para un modelo global de evacuación por tsunami, como CDRI Fellow en Tohoku University, con la supervisión del Prof. Erick Mas y Luis Moya (PUCP).",
         en: "Complex systems and agent-based modeling for a global tsunami evacuation model, as a CDRI Fellow at Tohoku University, supervised by Prof. Erick Mas and Luis Moya (PUCP).",
@@ -282,7 +282,7 @@ export const siteConfig = {
   teaching: [
     {
       institution: "Universidad San Ignacio de Loyola (USIL)",
-      role: { es: "Docente a tiempo parcial — 2026 – Presente", en: "Part-time Faculty Member — 2026 – Present" },
+      role: { es: "Docente a tiempo parcial — 2026", en: "Part-time Faculty Member — 2026" },
       courses: [
         { name: { es: "Asesor de tesis de pregrado y miembro de jurado de sustentación", en: "Undergraduate thesis advisor and thesis defense committee member" }, terms: "2026", note: "" },
       ],
@@ -341,7 +341,7 @@ export const siteConfig = {
     {
       company: "Universidad San Ignacio de Loyola (USIL)",
       title: { es: "Docente a tiempo parcial", en: "Part-time Faculty Member" },
-      dateRange: { es: "2026 – Presente", en: "2026 – Present" },
+      dateRange: "2026",
       bullets: [
         { es: "Asesor de tesis de pregrado y miembro de jurado de sustentación", en: "Undergraduate thesis advisor and thesis defense committee member" },
       ],
@@ -349,7 +349,7 @@ export const siteConfig = {
     {
       company: "Tohoku University",
       title: { es: "Investigador visitante y asistente de investigación — CDRI Fellow", en: "Visiting Researcher and Research Assistant — CDRI Fellow" },
-      dateRange: { es: "2025 – Presente", en: "2025 – Present" },
+      dateRange: "2025 – 2026",
       bullets: [
         { es: "Sistemas complejos y modelos basados en agentes para el Global Tsunami Evacuation Model (GTEM), con la supervisión del Prof. Erick Mas y Luis Moya (PUCP)", en: "Complex systems and agent-based modeling for the Global Tsunami Evacuation Model (GTEM), supervised by Prof. Erick Mas and Luis Moya (PUCP)" },
       ],
@@ -485,8 +485,10 @@ export const siteConfig = {
     "Reinforcement Learning",
     "Machine Learning",
     "Python",
+    "Julia",
     "Matlab",
     "C++",
+    "NetLogo",
     "ETABS",
     "SAP2000",
     "DIANA FEA",
