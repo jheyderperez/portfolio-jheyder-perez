@@ -8,7 +8,7 @@ Cuando guardas un cambio en `main`, la Action **Publicar sitio** compila el port
 
 ## Todo tu contenido está en un solo archivo
 
-**[`src/config.ts`](src/config.ts)**: nombre, sobre mí, líneas de investigación, publicaciones, presentaciones, proyectos (de investigación, de código y de consultoría), docencia, educación, experiencia, becas, premios, técnicas, idiomas y redes.
+**[`src/config.ts`](src/config.ts)**: nombre, sobre mí, líneas de investigación, publicaciones, presentaciones, proyectos (de investigación y de código), coautores con su página, docencia, educación, experiencia, becas, premios, técnicas, idiomas y redes.
 
 **Para editarlo:** abre el archivo → lápiz (arriba a la derecha) → cambia lo que quieras → **Commit changes**.
 
@@ -30,13 +30,15 @@ Los textos fijos de la interfaz (nombres de pestañas, títulos de sección) est
 
 ## Agregar un proyecto de código
 
-En `src/config.ts`, bloque `codeProjects`: reemplaza los `<<PLACEHOLDER>>` con el nombre, la descripción (en los dos idiomas), los lenguajes y el link a GitHub. Si solo tienes uno, borra el otro bloque.
+En `src/config.ts`, bloque `codeProjects`: agrega uno por proyecto con el nombre, la descripción (en los dos idiomas), los lenguajes y el link a GitHub (hay un ejemplo comentado). La sección «Proyectos de código» aparece sola cuando agregas el primero.
+
+Para que el nombre de un coautor enlace a su página, agrégalo en `coauthors` tal como aparece en la lista de autores (p. ej. `"Moya L.": "https://..."`).
 
 ## Cambiar tu foto, tu imagen para redes o un PDF
 
 Los archivos sueltos van en `public/`: `profile.jpg` (foto), `og.jpg` (la imagen que sale al compartir el link, 1200×630). Reemplázalos con el mismo nombre.
 
-Para que la pestaña CV tenga el botón de descarga: sube tu CV como `public/cv.pdf` y en `src/config.ts` pon `cvPdf: "/cv.pdf"`.
+El CV que descarga la pestaña CV es `public/cv.pdf`: para actualizarlo, sube tu nuevo PDF con ese mismo nombre.
 
 ## Colores
 
