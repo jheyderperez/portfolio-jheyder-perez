@@ -28,8 +28,8 @@ export const ui = {
   education: { es: "Formación", en: "Education" },
   contact: { es: "Contacto", en: "Contact" },
   contactText: {
-    es: "¿Interesado en servicios de evaluación estructural o asesoría en investigación? No dudes en contactarme.",
-    en: "Interested in structural assessment services or research advisory? Feel free to get in touch.",
+    es: "¿Quieres colaborar en investigación o conversar sobre mi trabajo? Escríbeme.",
+    en: "Would you like to collaborate on research or talk about my work? Get in touch.",
   },
   pubsIntro: {
     es: "Publicaciones, tesis y presentaciones. La lista completa y actualizada está en",
@@ -47,11 +47,9 @@ export const ui = {
     es: "Software y herramientas que desarrollé, con su código en GitHub.",
     en: "Software and tools I have developed, with their code on GitHub.",
   },
-  consulting: { es: "Consultoría — Toward Resilience Corporation S.A.C.", en: "Consulting — Toward Resilience Corporation S.A.C." },
-  selectedWork: { es: "Trabajos seleccionados", en: "Selected work" },
   teachingIntro: {
-    es: "Cursos en los que he enseñado como docente y pre docente.",
-    en: "Courses I have taught as a lecturer and teaching assistant.",
+    es: "Docencia universitaria, asesoría de tesis y cursos en los que fui pre docente.",
+    en: "University teaching, thesis advising and courses I supported as a teaching assistant.",
   },
   cvIntro: { es: "Resumen de mi trayectoria.", en: "A summary of my career." },
   downloadCv: { es: "Descargar CV (PDF)", en: "Download CV (PDF)" },

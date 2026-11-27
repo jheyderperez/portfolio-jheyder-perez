@@ -10,7 +10,14 @@ type Pub = (typeof siteConfig.publications)[number];
 
 const escapeHtml = (x: string) => x.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 // Resalta su nombre en la lista de autores.
-const authorsHtml = (a: string) => escapeHtml(a).replace(/(Perez,? J\.)/g, "<strong>$1</strong>");
+// Los coautores con página propia (siteConfig.coauthors) enlazan a ella.
+const authorsHtml = (a: string) => {
+  let html = escapeHtml(a).replace(/(Perez,? J\.)/g, "<strong>$1</strong>");
+  for (const [name, url] of Object.entries(siteConfig.coauthors)) {
+    html = html.split(escapeHtml(name)).join(`<a class="prose-link" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(name)}</a>`);
+  }
+  return html;
+};
 
 function byYear<T extends { year: string }>(items: T[]): Array<[string, T[]]> {
   const groups = new Map<string, T[]>();

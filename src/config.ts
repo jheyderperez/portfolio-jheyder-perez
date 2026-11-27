@@ -29,30 +29,30 @@ export const siteConfig = {
 
   // Una línea debajo del nombre en «Sobre mí».
   position: {
-    es: "Investigador visitante en Tohoku University · CEO de Toward Resilience Corporation S.A.C.",
-    en: "Visiting Researcher at Tohoku University · CEO of Toward Resilience Corporation S.A.C.",
+    es: "Doctorando en Ciencias de la Ingeniería · Pontificia Universidad Católica de Chile",
+    en: "Ph.D. Student in Engineering Sciences · Pontificia Universidad Católica de Chile",
   } as Text,
 
   description: {
-    es: "Ingeniero Civil especializado en Evaluación Estructural y Gestión de Riesgos de Desastres. CEO de Toward Resilience Corp. Investigador visitante en Tohoku University. Docente en PUCP.",
-    en: "Civil Engineer specialized in Structural Assessment and Disaster Risk Management. CEO of Toward Resilience Corp. Visiting Researcher at Tohoku University. Lecturer at PUCP.",
+    es: "Ingeniero Civil e investigador en evacuación frente a tsunamis con modelos basados en agentes y reinforcement learning. Doctorando en la Pontificia Universidad Católica de Chile y CDRI Fellow en Tohoku University.",
+    en: "Civil Engineer and researcher in tsunami evacuation with agent-based models and reinforcement learning. Ph.D. student at Pontificia Universidad Católica de Chile and CDRI Fellow at Tohoku University.",
   } as Text,
 
   accentColor: "#0F4C5C",
   highlightColor: "#14919B",
 
   social: {
-    email: "jheyder.perez@gmail.com",
+    email: "jpereza61@estudiante.uc.cl",
     scholar: "https://scholar.google.com/citations?user=B-WX9P0AAAAJ&hl=es",
     researchgate: "https://www.researchgate.net/profile/Jheyder-Perez-Aguinaga-2",
     linkedin: "https://www.linkedin.com/in/jheyderperez/",
     whatsapp: "https://wa.me/51959066643",
-    github: "", // pon aquí tu perfil de GitHub, p. ej. "https://github.com/usuario"
+    github: "https://github.com/jheyderperez",
   },
 
   // CV en PDF para descargar desde la pestaña CV. Si lo subes a public/
   // (p. ej. public/cv.pdf), escribe aquí "/cv.pdf". Vacío = no se muestra el botón.
-  cvPdf: "",
+  cvPdf: "/cv.pdf",
 
   // ─────────────────────────────── SOBRE MÍ ───────────────────────────────
   // Cada elemento de la lista es un párrafo.
@@ -62,16 +62,12 @@ export const siteConfig = {
       en: "Civil Engineer from Universidad San Ignacio de Loyola, with a Master's degree in Civil Engineering with a specialization in Natural Hazard Risk Management from the Pontificia Universidad Católica del Perú (PUCP), where I graduated first in my class with outstanding distinction.",
     },
     {
-      es: "Actualmente soy CEO de Toward Resilience Corporation S.A.C., empresa especializada en evaluación estructural de edificaciones existentes, y pre docente e investigador en la PUCP.",
-      en: "I am currently CEO of Toward Resilience Corporation S.A.C., a company specialized in the structural assessment of existing buildings, and a teaching assistant and researcher at PUCP.",
+      es: "Actualmente soy estudiante de Doctorado en Ciencias de la Ingeniería en la Pontificia Universidad Católica de Chile, asistente de investigación en Tohoku University como CDRI Fellow y docente a tiempo parcial en la Universidad San Ignacio de Loyola, donde asesoro tesis de pregrado.",
+      en: "I am currently a Ph.D. student in Engineering Sciences at Pontificia Universidad Católica de Chile, a Research Assistant at Tohoku University as a CDRI Fellow, and a part-time faculty member at Universidad San Ignacio de Loyola, where I advise undergraduate theses.",
     },
     {
       es: "Mi investigación se enfoca en sistemas de evacuación frente a tsunamis utilizando modelos basados en agentes y técnicas de reinforcement learning, con colaboraciones internacionales en Tohoku University (Japón) y la Universidad Técnica Federico Santa María (Chile).",
       en: "My research focuses on tsunami evacuation systems using agent-based models and reinforcement learning techniques, with international collaborations at Tohoku University (Japan) and Universidad Técnica Federico Santa María (Chile).",
-    },
-    {
-      es: "Próximamente iniciaré mi Doctorado en Ciencias de la Ingeniería en la Pontificia Universidad Católica de Chile.",
-      en: "I will soon begin my PhD in Engineering Sciences at the Pontificia Universidad Católica de Chile.",
     },
   ] as Text[],
 
@@ -79,8 +75,8 @@ export const siteConfig = {
     {
       title: { es: "Evaluación Estructural de Edificaciones Existentes", en: "Structural Assessment of Existing Buildings" },
       description: {
-        es: "Ensayos no destructivos, potencial de corrosión y modelamiento estructural en colegios, hospitales, iglesias, edificios residenciales y proyectos mineros.",
-        en: "Non-destructive testing, corrosion potential and structural modeling in schools, hospitals, churches, residential buildings and mining projects.",
+        es: "Patología, ensayos destructivos y no destructivos, potencial de corrosión y modelamiento estructural con fines de reparación y reforzamiento.",
+        en: "Pathology, destructive and non-destructive testing, corrosion potential and structural modeling for repair and strengthening.",
       },
     },
     {
@@ -113,18 +109,25 @@ export const siteConfig = {
   publications: [
     {
       authors: "Perez J., Moya L., Ramirez J., Gonzales E., Mas E., Adriano B. & Koshimura S.",
-      year: "2025",
-      title: "Tsunami Evacuation Planning for Camana, Peru: Insights from Agent-Based Modeling",
-      venue: "Natural Hazards",
-      status: { es: "En revisión", en: "Under review" } as Text,
+      year: "2026",
+      title: "Tsunami evacuation planning for Camana, Peru: insights from agent-based modeling",
+      venue: "Natural Hazards, 122, Article 488",
       type: "journal",
+      link: "https://link.springer.com/article/10.1007/s11069-026-08244-0",
+    },
+    {
+      authors: "Perez J., León J., Moya L. & Ogueda-Oliva A.",
+      year: "2025",
+      title: "Análisis de evacuación frente a alerta de tsunami en Punta Arenas, Chile: proceso observado y simulación computacional",
+      venue: { es: "Conferencia Internacional Ciudades Resilientes — Valparaíso, Chile", en: "International Conference on Resilient Cities — Valparaíso, Chile" } as Text,
+      type: "conference",
       link: "",
     },
     {
       authors: "Perez J., Moya L., Ramirez J., Gonzales E., Mas E., Adriano B. & Koshimura S.",
       year: "2025",
       title: "Tsunami pedestrian evacuation simulation for Camaná, Peru: Perspectives for improving evacuation performance",
-      venue: "E3S Web of Conferences, Vol. 515 (2025) — 17th Aceh International Workshop on Sustainable Tsunami Disaster Recovery",
+      venue: "E3S Web of Conferences, 651, 02011 — 17th Aceh International Workshop on Sustainable Tsunami Disaster Recovery",
       type: "conference",
       link: "https://www.e3s-conferences.org/articles/e3sconf/abs/2025/51/e3sconf_aiwest-dr2025_02011/e3sconf_aiwest-dr2025_02011.html",
     },
@@ -132,7 +135,7 @@ export const siteConfig = {
       authors: "Perez J., Cabrera N. & Reza A.",
       year: "2025",
       title: "Preparedness and strengths in disaster risk management in Lurigancho-Chosica, Lima, Peru: Toward resilience of Lima Metropolitan",
-      venue: "E3S Web of Conferences, Vol. 515 (2025) — 17th Aceh International Workshop on Sustainable Tsunami Disaster Recovery",
+      venue: "E3S Web of Conferences, 651, 03005 — 17th Aceh International Workshop on Sustainable Tsunami Disaster Recovery",
       type: "conference",
       link: "https://www.e3s-conferences.org/articles/e3sconf/abs/2025/51/e3sconf_aiwest-dr2025_03005/e3sconf_aiwest-dr2025_03005.html",
     },
@@ -146,6 +149,25 @@ export const siteConfig = {
     },
     {
       authors: "Perez J. & Córdova-Arias C.",
+      year: "2021",
+      title: "Propuesta para la evaluación de la resiliencia comunitaria frente a múltiples peligros en Lima",
+      venue: { es: "Conferencia Internacional Ciudades Resilientes desde el Sur Global (virtual), Chile, p. 63", en: "International Conference on Resilient Cities from the Global South (virtual), Chile, p. 63" } as Text,
+      type: "conference",
+      link: "",
+    },
+    {
+      authors: "Perez J.",
+      year: "2025",
+      title: "Diseño de planes de evacuación peatonal frente a tsunami mediante modelos basados en agentes y un algoritmo de machine learning en el balneario de Camaná, Arequipa, Perú",
+      venue: {
+        es: "Tesis de maestría — Pontificia Universidad Católica del Perú, Lima, Perú",
+        en: "Master's thesis — Pontificia Universidad Católica del Perú, Lima, Peru",
+      } as Text,
+      type: "thesis",
+      link: "https://hdl.handle.net/20.500.12404/31276",
+    },
+    {
+      authors: "Perez J.",
       year: "2022",
       title: "Propuesta de indicadores cuantitativos para la evaluación de la resiliencia comunitaria frente a escenarios multiamenazas en asentamientos informales de Lima Metropolitana, Perú",
       venue: {
@@ -153,7 +175,7 @@ export const siteConfig = {
         en: "Research to obtain the degree of Civil Engineer — Universidad San Ignacio de Loyola, Lima, Peru",
       } as Text,
       type: "thesis",
-      link: "",
+      link: "https://hdl.handle.net/20.500.14005/13005",
     },
     {
       authors: "Perez J., Retamozo K., Santillán B. & Velasquez S.",
@@ -176,18 +198,14 @@ export const siteConfig = {
     link?: string;
   }>,
 
+  // Coautores con página propia: su nombre en la lista de autores enlaza ahí.
+  // Escribe el nombre tal como aparece en «authors» (p. ej. "Moya L.").
+  coauthors: {
+    "Moya L.": "https://sites.google.com/view/luismoya",
+  } as Record<string, string>,
+
   // Presentaciones (charlas, ponencias). Los títulos van en su idioma original.
   talks: [
-    {
-      year: "2025",
-      title: "Análisis de Evacuación frente a Alerta de Tsunami en Punta Arenas, Chile: Proceso observado y Simulación computacional",
-      venue: { es: "Conferencia Internacional sobre Ciudades Resilientes, Chile", en: "International Conference on Resilient Cities, Chile" },
-    },
-    {
-      year: "2025",
-      title: "Tsunami pedestrian evacuation simulation for Camana, Peru: Perspectives for improving evacuation performance",
-      venue: { es: "17th Aceh International Workshop on Sustainable Tsunami Disaster Recovery (virtual), Londres, Reino Unido", en: "17th Aceh International Workshop on Sustainable Tsunami Disaster Recovery (virtual), London, United Kingdom" },
-    },
     {
       year: "2025",
       title: "La participación colaborativa para la adaptación al cambio climático y la gestión de riesgos en ecosistemas de Laderas urbanas, Lima y Arequipa",
@@ -199,19 +217,9 @@ export const siteConfig = {
       venue: { es: "Pontificia Universidad Católica del Perú, agosto de 2025", en: "Pontificia Universidad Católica del Perú, August 2025" },
     },
     {
-      year: "2024",
-      title: "Perspectivas de la Evaluación Estructural en el Desarrollo de Proyectos en el Perú",
-      venue: { es: "Seminario Especializado sobre Gestión de Proyectos de Evaluación Estructural, organizado por Toward Resilience Co., Lima, Perú", en: "Specialized Seminar on Structural Assessment Project Management, organized by Toward Resilience Co., Lima, Peru" },
-    },
-    {
       year: "2022",
       title: "Lima Metropolitana: La metrópoli que, bajo un clima cambiante, debe buscar evaluar su resiliencia comunitaria frente a escenarios de múltiples peligros",
       venue: { es: "Policy Brief: Aportes de la ciencia a Nuestro Desafío Climático, Ministerio del Ambiente, 2.ª edición, Lima, Perú", en: "Policy Brief: Science Contributions to Our Climate Challenge, Ministry of the Environment of Peru, 2nd edition, Lima, Peru" },
-    },
-    {
-      year: "2021",
-      title: "Propuesta para la Evaluación de la Resiliencia Comunitaria frente a Múltiples Peligros en Lima",
-      venue: { es: "Conferencia Internacional sobre Ciudades Resilientes (virtual), Chile, abril de 2021", en: "International Conference on Resilient Cities (virtual), Chile, April 2021" },
     },
   ] as Array<{ year: string; title: string; venue: Text }>,
 
@@ -220,32 +228,33 @@ export const siteConfig = {
     {
       name: { es: "Modelo Global de Evacuación por Tsunami (GTEM)", en: "Global Tsunami Evacuation Model (GTEM)" },
       role: { es: "Asistente de investigación", en: "Research Assistant" },
-      dateRange: { es: "Ago. 2025 – Presente", en: "Aug. 2025 – Present" },
+      dateRange: { es: "2025 – Presente", en: "2025 – Present" },
       description: {
-        es: "Desarrollo de sistemas complejos con modelos basados en agentes para optimizar la evacuación frente a tsunamis. Colaboración Tohoku University – PUCP, financiado por la Coalición para Infraestructura Resiliente a los Desastres (CDRI).",
-        en: "Development of complex systems with agent-based models to optimize tsunami evacuation. Tohoku University – PUCP collaboration, funded by the Coalition for Disaster Resilient Infrastructure (CDRI).",
+        es: "Sistemas complejos y modelos basados en agentes para un modelo global de evacuación por tsunami, como CDRI Fellow en Tohoku University, con la supervisión del Prof. Erick Mas y Luis Moya (PUCP).",
+        en: "Complex systems and agent-based modeling for a global tsunami evacuation model, as a CDRI Fellow at Tohoku University, supervised by Prof. Erick Mas and Luis Moya (PUCP).",
       },
       tags: ["Agent-Based Modeling", "Python", "Tohoku University", "CDRI"],
-      link: "",
+      link: "https://regidirides.github.io/gtem/",
+      links: [{ label: { es: "CDRI Fellowship", en: "CDRI Fellowship" }, url: "https://cdri.world/fellowship/inception-of-a-global-tsunami-evacuation-model/" }],
     },
     {
-      name: "An integrative framework for tsunami vertical-evacuation planning",
+      name: { es: "Evacuación frente a tsunami en Punta Arenas, Chile", en: "Tsunami evacuation in Punta Arenas, Chile" },
       role: { es: "Pasante de investigación", en: "Research Intern" },
-      dateRange: { es: "Jun. – Jul. 2025", en: "Jun. – Jul. 2025" },
+      dateRange: "2025",
       description: {
-        es: "Pasantía de investigación en la Universidad Técnica Federico Santa María, Valparaíso, Chile, supervisada por el Prof. Jorge León.",
-        en: "Research internship at Universidad Técnica Federico Santa María, Valparaíso, Chile, supervised by Prof. Jorge León.",
+        es: "Intercambio de investigación de maestría en el Centro de Investigación para la Gestión Integrada del Riesgo de Desastres (CIGIDEN), Universidad Técnica Federico Santa María, Valparaíso: modelamiento de la evacuación con modelos basados en agentes y reinforcement learning, con la supervisión del Prof. Jorge León y Luis Moya.",
+        en: "M.Sc. research exchange at the Research Center for Integrated Disaster Risk Management (CIGIDEN), Universidad Técnica Federico Santa María, Valparaíso: evacuation modeling with agent-based models and reinforcement learning, supervised by Prof. Jorge León and Luis Moya.",
       },
-      tags: ["UTFSM", { es: "Evacuación vertical", en: "Vertical evacuation" }],
+      tags: ["UTFSM", "CIGIDEN", "Agent-Based Modeling", "Reinforcement Learning"],
       link: "",
     },
     {
       name: { es: "Proyecto LAdERA — CONCYTEC", en: "LAdERA Project — CONCYTEC" },
       role: { es: "Asistente de investigación", en: "Research Assistant" },
-      dateRange: { es: "Ago. 2024 – Presente", en: "Aug. 2024 – Present" },
+      dateRange: "2024 – 2026",
       description: {
-        es: "Lineamientos para Adaptación al cambio climático en Ecosistemas urbanos de bajo Riesgo y mejoramiento Ambiental. Financiado por el CONCYTEC, Pontificia Universidad Católica del Perú.",
-        en: "Guidelines for climate change adaptation in low-risk urban ecosystems and environmental improvement. Funded by CONCYTEC, Pontificia Universidad Católica del Perú.",
+        es: "Análisis geoespacial de indicadores multidimensionales para la adaptación al cambio climático en ecosistemas urbanos, con la supervisión de la Prof. Sandra Santa-Cruz y Luis Moya. Financiado por el CONCYTEC, Pontificia Universidad Católica del Perú.",
+        en: "Geospatial analysis of multidimensional indicators for climate change adaptation in urban ecosystems, supervised by Prof. Sandra Santa-Cruz and Luis Moya. Funded by CONCYTEC, Pontificia Universidad Católica del Perú.",
       },
       tags: [{ es: "Gestión de Riesgos", en: "Risk Management" }, { es: "Cambio Climático", en: "Climate Change" }, "PUCP"],
       link: "",
@@ -259,81 +268,25 @@ export const siteConfig = {
         en: "Intelligent pedestrian evacuation system based on reinforcement learning techniques. Master's thesis funded by CONCYTEC, Pontificia Universidad Católica del Perú.",
       },
       tags: ["Reinforcement Learning", "Python", "PUCP"],
-      link: "",
+      link: "https://hdl.handle.net/20.500.12404/31276",
     },
-  ] as Array<{ name: Text; role: Text; dateRange: Text; description: Text; tags: Text[]; link?: string }>,
+  ] as Array<{ name: Text; role: Text; dateRange: Text; description: Text; tags: Text[]; link?: string; links?: Array<{ label: Text; url: string }> }>,
 
-  // Proyectos de código con su repositorio en GitHub.
-  // Reemplaza los <<PLACEHOLDER>> con tus proyectos (o borra el bloque que sobre).
+  // Proyectos de código con su repositorio en GitHub. La sección aparece sola
+  // cuando agregas el primero. Ejemplo:
+  //   { name: "mi-modelo", description: { es: "…", en: "…" }, tags: ["Python"], github: "https://github.com/jheyderperez/mi-modelo" },
   codeProjects: [
-    {
-      name: "<<PLACEHOLDER: nombre del proyecto de código 1>>",
-      description: {
-        es: "<<PLACEHOLDER: qué hace el proyecto, en 1-2 líneas>>",
-        en: "<<PLACEHOLDER: what the project does, in 1-2 lines>>",
-      },
-      tags: ["<<PLACEHOLDER: lenguaje>>"],
-      github: "", // p. ej. "https://github.com/usuario/repositorio"
-    },
-    {
-      name: "<<PLACEHOLDER: nombre del proyecto de código 2>>",
-      description: {
-        es: "<<PLACEHOLDER: qué hace el proyecto, en 1-2 líneas>>",
-        en: "<<PLACEHOLDER: what the project does, in 1-2 lines>>",
-      },
-      tags: ["<<PLACEHOLDER: lenguaje>>"],
-      github: "",
-    },
   ] as Array<{ name: Text; description: Text; tags: Text[]; github: string }>,
-
-  // Consultoría (Toward Resilience Corporation S.A.C.)
-  services: [
-    {
-      title: { es: "Evaluación Estructural", en: "Structural Assessment" },
-      description: {
-        es: "Evaluación integral de edificaciones existentes mediante ensayos no destructivos, potencial de corrosión y modelamiento estructural. Experiencia en colegios, hospitales, iglesias, edificios residenciales y proyectos mineros.",
-        en: "Comprehensive assessment of existing buildings through non-destructive testing, corrosion potential and structural modeling. Experience with schools, hospitals, churches, residential buildings and mining projects.",
-      },
-    },
-    {
-      title: { es: "Asesoría en Investigación", en: "Research Advisory" },
-      description: {
-        es: "Soporte en investigación académica en gestión de riesgos naturales, resiliencia comunitaria, modelamiento basado en agentes y evacuación frente a tsunamis.",
-        en: "Support for academic research in natural hazard risk management, community resilience, agent-based modeling and tsunami evacuation.",
-      },
-    },
-  ] as Array<{ title: Text; description: Text }>,
-
-  consultingProjects: [
-    {
-      name: { es: "Evaluación estructural de 21 instituciones educativas de Lima Metropolitana", en: "Structural assessment of 21 schools in Metropolitan Lima" },
-      client: { es: "Dirección Regional de Educación de Lima Metropolitana (DRELM)", en: "Regional Education Directorate of Metropolitan Lima (DRELM)" },
-      date: { es: "Ago. – Nov. 2025", en: "Aug. – Nov. 2025" },
-    },
-    {
-      name: { es: "Agua potable y alcantarillado de Puerto Maldonado y C.P. Mayor El Triunfo: evaluación estructural preliminar y detallada para el estudio definitivo", en: "Water supply and sewerage of Puerto Maldonado and C.P. Mayor El Triunfo: preliminary and detailed structural assessment for the final design study" },
-      client: "",
-      date: { es: "May. – Jul. 2025", en: "May – Jul. 2025" },
-    },
-    {
-      name: { es: "Iglesia San Antonio de Mala: evaluación estructural con fines de restauración tras el colapso por el sismo de Ica de 2007", en: "San Antonio de Mala Church: structural assessment for restoration after its collapse in the 2007 Ica earthquake" },
-      client: "",
-      date: { es: "Set. – Feb. 2025", en: "Sep. – Feb. 2025" },
-    },
-    {
-      name: { es: "Hospital Nacional Daniel Alcides Carrión, Callao: reforzamiento estructural de viga existente por corrosión extrema", en: "Daniel Alcides Carrión National Hospital, Callao: structural strengthening of an existing beam due to extreme corrosion" },
-      client: "",
-      date: { es: "Abr. – Jul. 2024", en: "Apr. – Jul. 2024" },
-    },
-    {
-      name: { es: "Mina Justa: detección del acero de refuerzo y potencial de corrosión en muros de batea del circuito de lixiviación", en: "Mina Justa: rebar detection and corrosion potential in the leaching circuit vat walls" },
-      client: { es: "JJC Contratistas Generales S.A., en soporte a Thornton Tomasetti", en: "JJC Contratistas Generales S.A., supporting Thornton Tomasetti" },
-      date: { es: "Ene. – Jun. 2023", en: "Jan. – Jun. 2023" },
-    },
-  ] as Array<{ name: Text; client: Text; date: Text }>,
 
   // ─────────────────────────────── DOCENCIA ───────────────────────────────
   teaching: [
+    {
+      institution: "Universidad San Ignacio de Loyola (USIL)",
+      role: { es: "Docente a tiempo parcial — 2026 – Presente", en: "Part-time Faculty Member — 2026 – Present" },
+      courses: [
+        { name: { es: "Asesor de tesis de pregrado y miembro de jurado de sustentación", en: "Undergraduate thesis advisor and thesis defense committee member" }, terms: "2026", note: "" },
+      ],
+    },
     {
       institution: "Pontificia Universidad Católica del Perú (PUCP)",
       role: { es: "Pre docente — Facultad de Ingeniería", en: "Teaching Assistant — Faculty of Engineering" },
@@ -341,15 +294,6 @@ export const siteConfig = {
         { name: { es: "Laboratorio de Materiales", en: "Materials Laboratory" }, terms: "2023-02, 2024-01, 2024-02", note: "Prof. Laura Navarro" },
         { name: { es: "Resistencia de Materiales", en: "Strength of Materials" }, terms: "2023-02", note: "Prof. Acero Martínez" },
         { name: { es: "Introducción a la Ingeniería Civil", en: "Introduction to Civil Engineering" }, terms: "2025-01", note: "Prof. Leonel Lipa Cusi" },
-      ],
-    },
-    {
-      institution: "<<PLACEHOLDER: institución donde dictó estos cursos como docente>>",
-      role: { es: "Docente", en: "Lecturer" },
-      courses: [
-        { name: { es: "Evaluación Estructural de Edificaciones Existentes", en: "Structural Assessment of Existing Buildings" }, terms: "2024-01, 2024-02, 2024-03, 2025-01, 2026-01", note: "" },
-        { name: { es: "Concretos Convencionales y Especiales", en: "Conventional and Special Concretes" }, terms: "2024-01", note: "" },
-        { name: { es: "Investigación Cualitativa y Cuantitativa en Procesos Industriales y Empresariales", en: "Qualitative and Quantitative Research in Industrial and Business Processes" }, terms: "2025-01", note: "" },
       ],
     },
     {
@@ -368,8 +312,8 @@ export const siteConfig = {
     {
       school: "Pontificia Universidad Católica de Chile",
       degree: { es: "Doctorado en Ciencias de la Ingeniería", en: "PhD in Engineering Sciences" },
-      dateRange: "2026",
-      achievements: [{ es: "Próximo inicio", en: "Starting soon" }],
+      dateRange: "2026 – Presente",
+      achievements: [{ es: "Beca VRIP — Pontificia Universidad Católica de Chile", en: "VRIP Scholarship — Pontificia Universidad Católica de Chile" }],
     },
     {
       school: "Pontificia Universidad Católica del Perú (PUCP)",
@@ -395,50 +339,67 @@ export const siteConfig = {
 
   experience: [
     {
-      company: "Tohoku University & International Research Project",
-      title: { es: "Investigador Visitante", en: "Visiting Researcher" },
-      dateRange: { es: "Ago. 2025 – Presente", en: "Aug. 2025 – Present" },
+      company: "Universidad San Ignacio de Loyola (USIL)",
+      title: { es: "Docente a tiempo parcial", en: "Part-time Faculty Member" },
+      dateRange: { es: "2026 – Presente", en: "2026 – Present" },
       bullets: [
-        { es: "Investigación en Japón bajo el Prof. Erik Mas sobre modelos basados en agentes para evacuación frente a tsunamis", en: "Research in Japan under Prof. Erik Mas on agent-based models for tsunami evacuation" },
-        { es: "Proyecto GTEM: Modelo Global de Evacuación por Tsunami, financiado por CDRI", en: "GTEM Project: Global Tsunami Evacuation Model, funded by CDRI" },
+        { es: "Asesor de tesis de pregrado y miembro de jurado de sustentación", en: "Undergraduate thesis advisor and thesis defense committee member" },
+      ],
+    },
+    {
+      company: "Tohoku University",
+      title: { es: "Investigador visitante y asistente de investigación — CDRI Fellow", en: "Visiting Researcher and Research Assistant — CDRI Fellow" },
+      dateRange: { es: "2025 – Presente", en: "2025 – Present" },
+      bullets: [
+        { es: "Sistemas complejos y modelos basados en agentes para el Global Tsunami Evacuation Model (GTEM), con la supervisión del Prof. Erick Mas y Luis Moya (PUCP)", en: "Complex systems and agent-based modeling for the Global Tsunami Evacuation Model (GTEM), supervised by Prof. Erick Mas and Luis Moya (PUCP)" },
+      ],
+    },
+    {
+      company: "Universidad Técnica Federico Santa María — CIGIDEN",
+      title: { es: "Pasante de investigación", en: "Research Intern" },
+      dateRange: "2025",
+      bullets: [
+        { es: "Modelamiento de la evacuación en Punta Arenas con modelos basados en agentes y reinforcement learning, con la supervisión del Prof. Jorge León y Luis Moya", en: "Evacuation modeling in Punta Arenas using agent-based modeling and reinforcement learning, supervised by Prof. Jorge León and Luis Moya" },
       ],
     },
     {
       company: "Pontificia Universidad Católica del Perú (PUCP)",
-      title: { es: "Pre Docente & Asistente de Investigación", en: "Teaching Assistant & Research Assistant" },
-      dateRange: { es: "Ago. 2023 – Presente", en: "Aug. 2023 – Present" },
+      title: { es: "Asistente de investigación — Proyecto LAdERA (CONCYTEC)", en: "Research Assistant — LAdERA Project (CONCYTEC)" },
+      dateRange: "2024 – 2026",
       bullets: [
-        { es: "Pre docente en Laboratorio de Materiales, Resistencia de Materiales e Introducción a la Ingeniería Civil", en: "Teaching assistant in Materials Laboratory, Strength of Materials and Introduction to Civil Engineering" },
-        { es: "Investigador en el Proyecto LAdERA (CONCYTEC): adaptación al cambio climático en ecosistemas urbanos", en: "Researcher in the LAdERA Project (CONCYTEC): climate change adaptation in urban ecosystems" },
-        { es: "Intercambio en la Universidad Técnica Federico Santa María (Chile): tsunami vertical-evacuation planning", en: "Exchange at Universidad Técnica Federico Santa María (Chile): tsunami vertical-evacuation planning" },
+        { es: "Análisis geoespacial de indicadores multidimensionales para la adaptación al cambio climático en ecosistemas urbanos, con la supervisión de la Prof. Sandra Santa-Cruz y Luis Moya", en: "Geospatial analysis of multidimensional indicators for climate change adaptation in urban ecosystems, supervised by Prof. Sandra Santa-Cruz and Luis Moya" },
+      ],
+    },
+    {
+      company: "Pontificia Universidad Católica del Perú (PUCP)",
+      title: { es: "Pre docente", en: "Teaching Assistant" },
+      dateRange: "2023 – 2025",
+      bullets: [
+        { es: "Laboratorio de Materiales, Resistencia de Materiales e Introducción a la Ingeniería Civil", en: "Materials Laboratory, Strength of Materials and Introduction to Civil Engineering" },
       ],
     },
     {
       company: "Toward Resilience Corporation S.A.C.",
-      title: { es: "CEO & Ingeniero de Proyectos", en: "CEO & Project Engineer" },
-      dateRange: { es: "Ago. 2022 – Presente", en: "Aug. 2022 – Present" },
+      title: { es: "CEO e ingeniero de proyectos", en: "CEO and Project Engineer" },
+      dateRange: "2022 – 2026",
       bullets: [
-        { es: "Evaluación estructural de 21 instituciones educativas para la DRELM de Lima Metropolitana", en: "Structural assessment of 21 schools for the DRELM of Metropolitan Lima" },
-        { es: "Servicios para JJC Contratistas Generales / Thornton Tomasetti en minería (Mina Justa)", en: "Services for JJC Contratistas Generales / Thornton Tomasetti in mining (Mina Justa)" },
-        { es: "Ensayos no destructivos, potencial de corrosión y modelamiento con fines de reforzamiento", en: "Non-destructive testing, corrosion potential and modeling for structural strengthening" },
+        { es: "Evaluación estructural, patología, ensayos, reparación y reforzamiento, y gestión del riesgo de desastres", en: "Structural assessment, pathology, testing, repair, strengthening and disaster risk management" },
       ],
     },
     {
       company: "Universidad San Ignacio de Loyola (USIL)",
-      title: { es: "Asistente Académico & Pre Docente", en: "Academic Assistant & Teaching Assistant" },
-      dateRange: { es: "Ago. 2022 – Oct. 2023", en: "Aug. 2022 – Oct. 2023" },
+      title: { es: "Asistente académico y pre docente", en: "Academic Assistant and Teaching Assistant" },
+      dateRange: "2022 – 2023",
       bullets: [
-        { es: "Pre docente en Tecnología del Concreto, Proyecto de Ingeniería Civil y Seminario de Tesis", en: "Teaching assistant in Concrete Technology, Civil Engineering Project and Thesis Seminar" },
-        { es: "Gestión documentaria y académica de estudiantes de Ingeniería Civil", en: "Academic and records management for Civil Engineering students" },
+        { es: "Tecnología del Concreto, Proyecto de Ingeniería Civil y Seminario de Tesis", en: "Concrete Technology, Civil Engineering Project and Thesis Seminar" },
       ],
     },
     {
       company: "Scientia Concrete S.A.C.",
-      title: { es: "Ingeniero Estructural de Proyectos", en: "Structural Project Engineer" },
-      dateRange: { es: "Ene. 2020 – Jul. 2022", en: "Jan. 2020 – Jul. 2022" },
+      title: { es: "Ingeniero estructural de proyectos", en: "Structural Project Engineer" },
+      dateRange: "2020 – 2022",
       bullets: [
-        { es: "Evaluación estructural y rehabilitación de edificaciones históricas, universidades y viviendas", en: "Structural assessment and rehabilitation of historic buildings, universities and housing" },
-        { es: "Técnicas destructivas y no destructivas en concreto armado, albañilería y tierra armada", en: "Destructive and non-destructive techniques in reinforced concrete, masonry and reinforced earth" },
+        { es: "Evaluación y rehabilitación de estructuras existentes mediante ensayos destructivos y no destructivos", en: "Evaluation and rehabilitation of existing structures through destructive and non-destructive testing" },
       ],
     },
   ] as Array<{ company: string; title: Text; dateRange: Text; bullets: Text[] }>,
@@ -452,8 +413,8 @@ export const siteConfig = {
 
   scholarships: [
     {
-      name: "CDRI — Coalition for Disaster Resilient Infrastructure",
-      issuer: "CDRI Research Grant",
+      name: "CDRI Fellowship — Coalition for Disaster Resilient Infrastructure",
+      issuer: "CDRI",
       year: { es: "2025 – Presente", en: "2025 – Present" },
       description: { es: "Financiamiento del proyecto GTEM (Global Tsunami Evacuation Model) en colaboración con Tohoku University y PUCP.", en: "Funding for the GTEM project (Global Tsunami Evacuation Model) in collaboration with Tohoku University and PUCP." },
     },
@@ -473,6 +434,18 @@ export const siteConfig = {
 
   awards: [
     {
+      name: { es: "Beca VRIP", en: "VRIP Scholarship" },
+      issuer: "Pontificia Universidad Católica de Chile",
+      year: "2026",
+      description: "",
+    },
+    {
+      name: { es: "Seleccionado — Contrato Predoctoral FPI-UPM 2025", en: "Selected recipient — FPI-UPM 2025 Predoctoral Contract Grant" },
+      issuer: "Universidad Politécnica de Madrid",
+      year: "2026",
+      description: "",
+    },
+    {
       name: { es: "1er Puesto — Mención Sobresaliente", en: "Ranked 1st — Outstanding Distinction" },
       issuer: "Pontificia Universidad Católica del Perú (PUCP)",
       year: "2025",
@@ -480,7 +453,7 @@ export const siteConfig = {
     },
     {
       name: { es: "Proyecto de investigación seleccionado", en: "Selected research project" },
-      issuer: "",
+      issuer: { es: "Centro de Estudios y Prevención de Desastres (PREDES)", en: "Center for Disaster Studies and Prevention (PREDES)" },
       year: "2024",
       description: { es: "Evaluación de la resiliencia para mejorar la gobernanza del riesgo de desastres frente a eventos multipeligro en el balneario de Ancón.", en: "Resilience assessment to improve disaster risk governance against multi-hazard events in the seaside district of Ancón." },
     },
@@ -493,7 +466,7 @@ export const siteConfig = {
     {
       name: { es: "Premio a la Excelencia Universitaria", en: "University Excellence Award" },
       issuer: "American Concrete Institute — ACI International",
-      year: "2020",
+      year: "2019",
       description: { es: "Por su destacada labor como Vicepresidente del Capítulo Estudiantil ACI USIL.", en: "For his outstanding work as Vice President of the ACI USIL Student Chapter." },
     },
     {
@@ -513,6 +486,7 @@ export const siteConfig = {
     "Machine Learning",
     "Python",
     "Matlab",
+    "C++",
     "ETABS",
     "SAP2000",
     "DIANA FEA",
