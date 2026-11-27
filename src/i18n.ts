@@ -26,6 +26,8 @@ export function tabPath(key: TabKey, lang: Lang): string {
 export const ui = {
   researchInterests: { es: "Líneas de investigación", en: "Research interests" },
   education: { es: "Formación", en: "Education" },
+  news: { es: "Noticias", en: "News" },
+  designBy: { es: "Diseño inspirado en el sitio de", en: "Design inspired by the website of" },
   contact: { es: "Contacto", en: "Contact" },
   contactText: {
     es: "¿Quieres colaborar en investigación o conversar sobre mi trabajo? Escríbeme.",

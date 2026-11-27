@@ -54,6 +54,33 @@ export const siteConfig = {
   // (p. ej. public/cv.pdf), escribe aquí "/cv.pdf". Vacío = no se muestra el botón.
   cvPdf: "/cv.pdf",
 
+  // El diseño se inspira en el sitio de mi profesor; el crédito sale en el pie de página.
+  designCredit: { name: "Alan Poulos", url: "https://ajpoulos.github.io/" },
+
+  // ──────────────────────────────── NOTICIAS ────────────────────────────────
+  // Lo más nuevo arriba. Para agregar una noticia, copia un bloque y cámbialo.
+  // link es opcional.
+  news: [
+    {
+      date: "2026",
+      text: { es: "Publiqué «Tsunami evacuation planning for Camana, Peru: insights from agent-based modeling» en Natural Hazards.", en: "Published “Tsunami evacuation planning for Camana, Peru: insights from agent-based modeling” in Natural Hazards." },
+      link: "https://link.springer.com/article/10.1007/s11069-026-08244-0",
+    },
+    {
+      date: "2026",
+      text: { es: "Inicié el Doctorado en Ciencias de la Ingeniería en la Pontificia Universidad Católica de Chile, con la Beca VRIP.", en: "Started my Ph.D. in Engineering Sciences at Pontificia Universidad Católica de Chile, with a VRIP Scholarship." },
+    },
+    {
+      date: "2026",
+      text: { es: "Seleccionado para el Contrato Predoctoral FPI-UPM 2025 de la Universidad Politécnica de Madrid.", en: "Selected recipient of the FPI-UPM 2025 Predoctoral Contract Grant, Universidad Politécnica de Madrid." },
+    },
+    {
+      date: "2025",
+      text: { es: "Me uní como CDRI Fellow al proyecto Global Tsunami Evacuation Model (GTEM) en Tohoku University.", en: "Joined the Global Tsunami Evacuation Model (GTEM) project at Tohoku University as a CDRI Fellow." },
+      link: "https://regidirides.github.io/gtem/",
+    },
+  ] as Array<{ date: string; text: Text; link?: string }>,
+
   // ─────────────────────────────── SOBRE MÍ ───────────────────────────────
   // Cada elemento de la lista es un párrafo.
   aboutMe: [
@@ -269,8 +296,11 @@ export const siteConfig = {
       },
       tags: ["Reinforcement Learning", "Python", "PUCP"],
       link: "https://hdl.handle.net/20.500.12404/31276",
+      // Figura opcional: un archivo en public/figuras/ y su pie con la fuente.
+      image: "/figuras/camana-natural-hazards.jpg",
+      imageCaption: { es: "Escenarios de tsunami e inundación para Camaná. Fuente: Perez et al. (2026), Natural Hazards (CC BY 4.0).", en: "Tsunami and inundation scenarios for Camaná. Source: Perez et al. (2026), Natural Hazards (CC BY 4.0)." },
     },
-  ] as Array<{ name: Text; role: Text; dateRange: Text; description: Text; tags: Text[]; link?: string; links?: Array<{ label: Text; url: string }> }>,
+  ] as Array<{ name: Text; role: Text; dateRange: Text; description: Text; tags: Text[]; link?: string; links?: Array<{ label: Text; url: string }>; image?: string; imageCaption?: Text }>,
 
   // Proyectos de código con su repositorio en GitHub. La sección aparece sola
   // cuando agregas el primero. Ejemplo:

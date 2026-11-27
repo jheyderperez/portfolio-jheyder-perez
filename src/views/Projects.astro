@@ -22,6 +22,12 @@ const isPlaceholder = (x: string) => x.includes("<<PLACEHOLDER");
           </h3>
           <p class="text-[15px] font-semibold mt-0.5" style="color: var(--accent)">{t(p.role, lang)}</p>
           <p class="mt-1.5 text-[16px] leading-relaxed" style="color: var(--muted)">{t(p.description, lang)}</p>
+          {p.image && (
+            <figure class="mt-4">
+              <img src={p.image} alt={t(p.imageCaption, lang) || t(p.name, lang)} loading="lazy" class="w-full h-auto rounded border" style="border-color: var(--line)" />
+              {p.imageCaption && <figcaption class="mt-1.5 text-[13px] italic" style="color: var(--muted)">{t(p.imageCaption, lang)}</figcaption>}
+            </figure>
+          )}
           <div class="mt-2.5 flex flex-wrap gap-1.5">
             {p.tags.map((tag) => <span class="chip">{t(tag, lang)}</span>)}
           </div>

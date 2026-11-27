@@ -72,6 +72,8 @@ const jsonLd = {
     />
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
     <style set:html={`:root{--accent:${siteConfig.accentColor};--highlight:${siteConfig.highlightColor};}`}></style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous" />
   </head>
   <body class="min-h-screen flex flex-col">
     <header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b" style="border-color: var(--line)">
@@ -139,7 +141,10 @@ const jsonLd = {
 
     <footer class="border-t" style="border-color: var(--line)">
       <div class="max-w-[880px] mx-auto px-4 sm:px-6 py-6 flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between text-sm" style="color: var(--muted)">
-        <p>&copy; {new Date().getFullYear()} {siteConfig.name}. {t(ui.rights, lang)}</p>
+        <div>
+          <p>&copy; {new Date().getFullYear()} {siteConfig.name}. {t(ui.rights, lang)}</p>
+          {siteConfig.designCredit && <p class="mt-1 text-xs">{t(ui.designBy, lang)} <a class="hover:underline" href={siteConfig.designCredit.url} target="_blank" rel="noopener noreferrer">{siteConfig.designCredit.name}</a>.</p>}
+        </div>
         <p class="flex flex-wrap gap-x-4 gap-y-1">
           {s.email && <a class="hover:underline" href={`mailto:${s.email}`}>Email</a>}
           {s.scholar && <a class="hover:underline" href={s.scholar} target="_blank" rel="noopener noreferrer">Google Scholar</a>}

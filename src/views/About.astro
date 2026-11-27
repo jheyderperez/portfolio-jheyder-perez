@@ -36,6 +36,23 @@ const s = siteConfig.social;
   </div>
 </section>
 
+{siteConfig.news.length > 0 && (
+  <section class="mt-14">
+    <h2 class="section-title">{t(ui.news, lang)}</h2>
+    <ul class="space-y-3">
+      {siteConfig.news.map((n) => (
+        <li class="grid grid-cols-[64px_1fr] gap-4 text-[16px] leading-relaxed">
+          <span class="tabular-nums font-semibold" style="color: var(--accent)">{n.date}</span>
+          <span style="color: var(--ink)">
+            {t(n.text, lang)}
+            {n.link && <> <a class="prose-link whitespace-nowrap" href={n.link} target="_blank" rel="noopener noreferrer">{t(ui.view, lang)} ↗</a></>}
+          </span>
+        </li>
+      ))}
+    </ul>
+  </section>
+)}
+
 <section class="mt-14">
   <h2 class="section-title">{t(ui.researchInterests, lang)}</h2>
   <ul class="grid gap-x-10 gap-y-6 sm:grid-cols-2">
