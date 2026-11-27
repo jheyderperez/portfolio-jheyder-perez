@@ -15,13 +15,14 @@ name: Publicar sitio
 on:
   push:
     branches: [main]
+  pull_request:          # en un PR solo compila y verifica; no publica
   workflow_dispatch:
 
 permissions:
   contents: write
 
 concurrency:
-  group: publicar-sitio
+  group: publicar-sitio-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -56,6 +57,7 @@ jobs:
           echo "Dominio: $(cat dist/CNAME)"
 
       - name: Publicar en gh-pages
+        if: github.event_name != 'pull_request'
         run: |
           cd dist
           git init -q

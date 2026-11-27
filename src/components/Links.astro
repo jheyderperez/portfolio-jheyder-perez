@@ -1,0 +1,31 @@
+---
+// Enlaces de contacto y perfiles académicos, como íconos cuadrados.
+// Los íconos vienen de Font Awesome y Academicons (cargados en Base.astro).
+import { siteConfig } from "../config";
+const s = siteConfig.social;
+const links = [
+  s.email && { label: "Email", icon: "fas fa-envelope", href: `mailto:${s.email}`, external: false },
+  s.scholar && { label: "Google Scholar", icon: "ai ai-google-scholar", href: s.scholar, external: true },
+  s.researchgate && { label: "ResearchGate", icon: "ai ai-researchgate", href: s.researchgate, external: true },
+  s.linkedin && { label: "LinkedIn", icon: "fab fa-linkedin-in", href: s.linkedin, external: true },
+  s.github && { label: "GitHub", icon: "fab fa-github", href: s.github, external: true },
+  s.whatsapp && { label: "WhatsApp", icon: "fab fa-whatsapp", href: s.whatsapp, external: true },
+].filter(Boolean) as Array<{ label: string; icon: string; href: string; external: boolean }>;
+---
+
+<ul class="flex flex-wrap gap-2">
+  {links.map((l) => (
+    <li>
+      <a
+        href={l.href}
+        title={l.label}
+        aria-label={l.label}
+        {...(l.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+        class="inline-flex items-center justify-center w-10 h-10 rounded border text-lg transition-colors hover:text-white hover:bg-[var(--accent)] hover:border-[var(--accent)]"
+        style="color: var(--accent); border-color: color-mix(in srgb, var(--accent) 35%, white)"
+      >
+        <i class={l.icon} aria-hidden="true"></i>
+      </a>
+    </li>
+  ))}
+</ul>

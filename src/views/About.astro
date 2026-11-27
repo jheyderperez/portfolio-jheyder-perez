@@ -1,0 +1,99 @@
+---
+import { siteConfig, type Lang } from "../config";
+import { t, ui, tabPath } from "../i18n";
+import Links from "../components/Links.astro";
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const s = siteConfig.social;
+---
+
+<section>
+  <h1 class="text-4xl sm:text-5xl tracking-tight" style="color: var(--ink)">
+    <span class="font-bold">{siteConfig.shortName.first}</span>
+    <span class="font-light">{siteConfig.shortName.last}</span>
+  </h1>
+  <p class="mt-2 text-lg" style="color: var(--muted)">{t(siteConfig.title, lang)}</p>
+
+  <div class="mt-8 grid gap-8 md:grid-cols-[1fr_230px] md:gap-10 items-start">
+    <figure class="md:order-2 w-44 sm:w-52 md:w-full">
+      <img
+        src="/profile.jpg"
+        alt={siteConfig.name}
+        width="800"
+        height="1044"
+        class="w-full h-auto rounded shadow-md"
+      />
+    </figure>
+
+    <div class="md:order-1 space-y-4 text-[17px] leading-relaxed">
+      <p class="font-semibold" style="color: var(--accent)">{t(siteConfig.position, lang)}</p>
+      {siteConfig.aboutMe.map((p) => <p>{t(p, lang)}</p>)}
+      <div class="pt-2">
+        <Links />
+      </div>
+    </div>
+  </div>
+</section>
+
+{siteConfig.news.length > 0 && (
+  <section class="mt-14">
+    <h2 class="section-title">{t(ui.news, lang)}</h2>
+    <ul class="space-y-3">
+      {siteConfig.news.map((n) => (
+        <li class="grid grid-cols-[64px_1fr] gap-4 text-[16px] leading-relaxed">
+          <span class="tabular-nums font-semibold" style="color: var(--accent)">{n.date}</span>
+          <span style="color: var(--ink)">
+            {t(n.text, lang)}
+            {n.link && <> <a class="prose-link whitespace-nowrap" href={n.link} target="_blank" rel="noopener noreferrer">{t(ui.view, lang)} ↗</a></>}
+          </span>
+        </li>
+      ))}
+    </ul>
+  </section>
+)}
+
+<section class="mt-14">
+  <h2 class="section-title">{t(ui.researchInterests, lang)}</h2>
+  <ul class="grid gap-x-10 gap-y-6 sm:grid-cols-2">
+    {siteConfig.researchLines.map((r, i) => (
+      <li class="flex gap-3">
+        <span class="text-sm font-semibold tabular-nums pt-0.5" style="color: var(--highlight)">0{i + 1}</span>
+        <div>
+          <h3 class="font-semibold leading-snug" style="color: var(--ink)">{t(r.title, lang)}</h3>
+          <p class="mt-1 text-[15px] leading-relaxed" style="color: var(--muted)">{t(r.description, lang)}</p>
+        </div>
+      </li>
+    ))}
+  </ul>
+</section>
+
+<section class="mt-14">
+  <h2 class="section-title">{t(ui.education, lang)}</h2>
+  <ul class="space-y-4">
+    {siteConfig.education.map((e) => (
+      <li class="grid grid-cols-[88px_1fr] sm:grid-cols-[110px_1fr] gap-3">
+        <span class="text-sm tabular-nums pt-0.5" style="color: var(--muted)">{e.dateRange}</span>
+        <div class="flex items-start gap-3">
+          {e.logo && <img src={e.logo} alt={e.school} width="40" height="40" loading="lazy" class="w-14 h-10 object-contain shrink-0 mt-0.5" />}
+          <div>
+            <p class="font-semibold leading-snug">{t(e.degree, lang)}</p>
+            <p class="text-[15px]" style="color: var(--muted)">{e.school}</p>
+          </div>
+        </div>
+      </li>
+    ))}
+  </ul>
+  <p class="mt-5 text-[15px]">
+    <a href={tabPath("cv", lang)} class="prose-link">{lang === "es" ? "Ver CV completo →" : "See full CV →"}</a>
+  </p>
+</section>
+
+<section class="mt-14">
+  <h2 class="section-title">{t(ui.contact, lang)}</h2>
+  <p class="text-[17px] leading-relaxed">{t(ui.contactText, lang)}</p>
+  <p class="mt-3 text-[17px] flex flex-wrap gap-x-6 gap-y-2">
+    {s.email && <a class="prose-link" href={`mailto:${s.email}`}>{s.email}</a>}
+    {s.whatsapp && <a class="prose-link" href={s.whatsapp} target="_blank" rel="noopener noreferrer">WhatsApp</a>}
+  </p>
+</section>
