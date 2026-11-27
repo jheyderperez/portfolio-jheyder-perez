@@ -340,13 +340,13 @@ export const siteConfig = {
   // ────────────────────────────────── CV ──────────────────────────────────
   education: [
     {
-      school: "Pontificia Universidad Católica de Chile",
+      school: "Pontificia Universidad Católica de Chile", logo: "/logos/puc-chile.svg",
       degree: { es: "Doctorado en Ciencias de la Ingeniería", en: "PhD in Engineering Sciences" },
       dateRange: "2026 – Presente",
       achievements: [{ es: "Beca VRIP — Pontificia Universidad Católica de Chile", en: "VRIP Scholarship — Pontificia Universidad Católica de Chile" }],
     },
     {
-      school: "Pontificia Universidad Católica del Perú (PUCP)",
+      school: "Pontificia Universidad Católica del Perú (PUCP)", logo: "/logos/pucp.svg",
       degree: { es: "Maestría en Ingeniería Civil — Gestión de Riesgos Naturales", en: "Master's in Civil Engineering — Natural Hazard Risk Management" },
       dateRange: "2023 – 2025",
       achievements: [
@@ -356,7 +356,7 @@ export const siteConfig = {
       ],
     },
     {
-      school: "Universidad San Ignacio de Loyola (USIL)",
+      school: "Universidad San Ignacio de Loyola (USIL)", logo: "/logos/usil.png",
       degree: { es: "Ingeniero Civil — CIP N° 315093", en: "Civil Engineer — CIP No. 315093" },
       dateRange: "2015 – 2020",
       achievements: [
@@ -365,7 +365,7 @@ export const siteConfig = {
         { es: "Premio Excelencia Universitaria — ACI International", en: "University Excellence Award — ACI International" },
       ],
     },
-  ] as Array<{ school: string; degree: Text; dateRange: string; achievements: Text[] }>,
+  ] as Array<{ school: string; logo?: string; degree: Text; dateRange: string; achievements: Text[] }>,
 
   experience: [
     {

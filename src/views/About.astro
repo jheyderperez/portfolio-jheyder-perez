@@ -74,9 +74,12 @@ const s = siteConfig.social;
     {siteConfig.education.map((e) => (
       <li class="grid grid-cols-[88px_1fr] sm:grid-cols-[110px_1fr] gap-3">
         <span class="text-sm tabular-nums pt-0.5" style="color: var(--muted)">{e.dateRange}</span>
-        <div>
-          <p class="font-semibold leading-snug">{t(e.degree, lang)}</p>
-          <p class="text-[15px]" style="color: var(--muted)">{e.school}</p>
+        <div class="flex items-start gap-3">
+          {e.logo && <img src={e.logo} alt={e.school} width="40" height="40" loading="lazy" class="w-14 h-10 object-contain shrink-0 mt-0.5" />}
+          <div>
+            <p class="font-semibold leading-snug">{t(e.degree, lang)}</p>
+            <p class="text-[15px]" style="color: var(--muted)">{e.school}</p>
+          </div>
         </div>
       </li>
     ))}
