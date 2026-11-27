@@ -17,9 +17,9 @@ export type Lang = "es" | "en";
 export type Text = string | { es: string; en: string };
 
 export const siteConfig = {
-  name: "Jheyder W. Perez Aguinaga",
+  name: "Jheyder Perez",
   // Cómo se muestra el nombre arriba a la izquierda: primera parte en negrita.
-  shortName: { first: "Jheyder", last: "Perez Aguinaga" },
+  shortName: { first: "Jheyder", last: "Perez" },
   url: "https://jheyderperez.com",
 
   title: {
